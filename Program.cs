@@ -4,28 +4,26 @@ class Program
 {
     static void Main()
     {
-        string nomecand1, nomecand2;
-        int votoscand1, votoscand2;
+        int x, p = 0, i = 0;
 
-        Console.WriteLine("Informe o nome do candidato 1:");
-        nomecand1 = Console.ReadLine();
+        do
+        {
+            Console.WriteLine("Digite um numero inteiro: ");
+            x = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Informe o numero de votos do candidato 1:");
-        votoscand1 = int.Parse(Console.ReadLine());  // Correção aqui
+            if (x % 2 == 0)
+                p++;
 
-        Console.WriteLine("Informe o nome do candidato 2:");
-        nomecand2 = Console.ReadLine();
+            else
+                i++;
 
-        Console.WriteLine("Informe o numero de votos do candidato 2:");
-        votoscand2 = int.Parse(Console.ReadLine());  // Correção aqui
 
-        if (votoscand1 > votoscand2)
-            Console.WriteLine($"O candidato {nomecand1} ganhou");
+        } while (p < 5 && i < 5);
 
-        else if (votoscand2 > votoscand1)
-            Console.WriteLine($"O candidato {nomecand2} ganhou");
+        Console.WriteLine($"Contagem numeros pares {p}");
+        Console.WriteLine($"Contagem numeros impares {i}");
 
-        else
-            Console.WriteLine($"Uma nova eleição deve ser realizada, houve empate entre os candidatos");
+
+
     }
 }

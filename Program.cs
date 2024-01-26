@@ -1,24 +1,30 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Linq.Expressions;
 
 class Program
 {
     static void Main()
     {
-        int x, i = 0, p = 0;
+      int n, i, soma=0, x;
+      double media;
 
-        do
-        {
-            Console.WriteLine("Digite um número inteiro: ");
-            x = int.Parse(Console.ReadLine());
+      Console.WriteLine("Digite a quantidade de alunos que voce quer calcuar a media: ");
+      n = int.Parse(Console.ReadLine());
 
-            if (x % 2 == 1)
-                i++;
-            else
-                p++;
+      for (i=1; i<=n; i++)
+      {
+        Console.WriteLine($"Digite a idade do {i}o aluno: ");
+        x = int.Parse(Console.ReadLine());
 
-        } while (p < i * 2);
+        soma += x;
 
-        Console.WriteLine($"Quantidade de ímpares: {i}");
-        Console.WriteLine($"Quantidade de pares: {p}");
+      }
+
+      media = (double) soma / n;
+
+   Console.WriteLine($"a media sera de {media}");
+
+
     }
 }

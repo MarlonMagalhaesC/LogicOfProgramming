@@ -6,24 +6,25 @@ class Program
 {
     static void Main()
     {
-      int n, i, soma=0, x;
-      double media;
+        int n, numeros, conti = 0, contp = 0;
 
-      Console.WriteLine("Digite a quantidade de alunos que voce quer calcuar a media: ");
-      n = int.Parse(Console.ReadLine());
+        Console.WriteLine("Digite a quantidade de numeros: ");
+        n = int.Parse(Console.ReadLine());
 
-      for (i=1; i<=n; i++)
-      {
-        Console.WriteLine($"Digite a idade do {i}o aluno: ");
-        x = int.Parse(Console.ReadLine());
+        for (int i = 1; i <= n; i++)
+        {
+            Console.WriteLine($"Digite o {i}o numero: ");
+            numeros = int.Parse(Console.ReadLine());
 
-        soma += x;
+            if (numeros % 2 == 0)
+                contp++;
 
-      }
+            else
+                conti++;
+        }
 
-      media = (double) soma / n;
-
-   Console.WriteLine($"a media sera de {media}");
+        Console.WriteLine($"A quantidade de numeros impares sao: {conti}");
+        Console.WriteLine($"A quantidade de numeros pares sao: {contp}");
 
 
     }

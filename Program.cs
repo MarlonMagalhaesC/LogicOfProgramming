@@ -4,26 +4,21 @@ class Program
 {
     static void Main()
     {
-        int x, p = 0, i = 0;
+        int x, i = 0, p = 0;
 
         do
         {
-            Console.WriteLine("Digite um numero inteiro: ");
+            Console.WriteLine("Digite um número inteiro: ");
             x = int.Parse(Console.ReadLine());
 
-            if (x % 2 == 0)
+            if (x % 2 == 1)
+                i++;
+            else
                 p++;
 
-            else
-                i++;
+        } while (p < i * 2);
 
-
-        } while (p < 5 && i < 5);
-
-        Console.WriteLine($"Contagem numeros pares {p}");
-        Console.WriteLine($"Contagem numeros impares {i}");
-
-
-
+        Console.WriteLine($"Quantidade de ímpares: {i}");
+        Console.WriteLine($"Quantidade de pares: {p}");
     }
 }

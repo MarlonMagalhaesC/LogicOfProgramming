@@ -6,27 +6,27 @@ class Program
 {
   static void Main()
   {
-    int veiculos;
-    float soma = 0, multas;
-    float media;
+    int n, x, par=0, impar=0;
 
-    Console.WriteLine("Digite quantos veiculos sao: ");
-    veiculos = int.Parse(Console.ReadLine());
+    Console.WriteLine("Digite quantos numeros voce quer que seja: ");
+    n = int.Parse(Console.ReadLine());
 
-    for (int i = 1; i <= veiculos; i++)
+    for (int i=1; i<=n; i++)
     {
-      Console.WriteLine($"Digite o valor da multa do {i}o veiculo: ");
-      multas = float.Parse(Console.ReadLine());
+     Console.WriteLine($"Digite o {i}o elemento: ");
+     x = int.Parse(Console.ReadLine());
 
-      soma += multas;
+     if (x % 2 == 0)
+     par++;
+
+     else
+     impar++;   
+
 
     }
-    media = soma/veiculos;
 
-    Console.WriteLine($"A soma das multas{soma}");
-    Console.WriteLine($"A media das multas{media}");
-    Console.WriteLine($"A quantidade de veiculos {veiculos}");
-
+    Console.WriteLine($"Total de pares: {par} ");
+    Console.WriteLine($"Total de impar: {impar} ");
 
 
 

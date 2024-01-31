@@ -6,30 +6,54 @@ class Program
 {
   static void Main()
   {
-    int n, x, par=0, impar=0;
 
-    Console.WriteLine("Digite quantos numeros voce quer que seja: ");
+    int n, soma = 0, numeros, menor= int.MaxValue, maior=int.MinValue, pares = 0, impares = 0, positivos = 0, negativos = 0, nulos = 0;
+    float media;
+
+    Console.WriteLine("Digite um numero inteiro positivo: ");
     n = int.Parse(Console.ReadLine());
 
-    for (int i=1; i<=n; i++)
+    for (int i = 1; i <= n; i++)
     {
-     Console.WriteLine($"Digite o {i}o elemento: ");
-     x = int.Parse(Console.ReadLine());
+      Console.WriteLine($"Digite o {i}o numero: ");
+      numeros = int.Parse(Console.ReadLine());
 
-     if (x % 2 == 0)
-     par++;
+      soma += numeros;
 
-     else
-     impar++;   
+      if (numeros > maior)
+        maior = numeros;
 
+      if (numeros < menor)
+        menor = numeros;
+
+      if (numeros % 2 == 0)
+        pares++;
+
+      else
+        impares++;
+
+      if (numeros > 0)
+        positivos++;
+
+      else if (numeros < 0)
+        negativos++;
+
+      else
+        nulos++;
 
     }
 
-    Console.WriteLine($"Total de pares: {par} ");
-    Console.WriteLine($"Total de impar: {impar} ");
+    media = (float) soma / n;
 
-
-
+Console.WriteLine($"Soma {soma}");
+Console.WriteLine($"Media {media}");
+Console.WriteLine($"O maior{maior}");
+Console.WriteLine($"O menor {menor}");
+Console.WriteLine($"Pares {pares}");
+Console.WriteLine($"Impares {impares}");
+Console.WriteLine($"Positivos {positivos}");
+Console.WriteLine($"Negativos {negativos}");
+Console.WriteLine($"Nulos {nulos}");
 
 
 

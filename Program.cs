@@ -7,53 +7,45 @@ class Program
   static void Main()
   {
 
-    int n, soma = 0, numeros, menor= int.MaxValue, maior=int.MinValue, pares = 0, impares = 0, positivos = 0, negativos = 0, nulos = 0;
-    float media;
+    int n, x;
+    float saldo, operacao;
 
-    Console.WriteLine("Digite um numero inteiro positivo: ");
+
+    Console.WriteLine("Digite o sado inicial da conta: ");
+    saldo = float.Parse(Console.ReadLine());
+
+    Console.WriteLine("Digite quantas operacoes foram feitas; ");
     n = int.Parse(Console.ReadLine());
 
     for (int i = 1; i <= n; i++)
     {
-      Console.WriteLine($"Digite o {i}o numero: ");
-      numeros = int.Parse(Console.ReadLine());
+      Console.WriteLine("Digite 1 para credito: ");
+      Console.WriteLine("Digite 2 para debito ");
+      x = int.Parse(Console.ReadLine());
 
-      soma += numeros;
+      if (x == 1)
+      {
+        Console.WriteLine("Digite o valor da operacao: ");
+        operacao = float.Parse(Console.ReadLine());
 
-      if (numeros > maior)
-        maior = numeros;
+        saldo = saldo + operacao;
+      }
 
-      if (numeros < menor)
-        menor = numeros;
 
-      if (numeros % 2 == 0)
-        pares++;
+      else if (x == 2)
+      {
+        Console.WriteLine("Digite o valor da operacao: ");
+        operacao = float.Parse(Console.ReadLine());
 
-      else
-        impares++;
+        saldo = saldo - operacao;
+      }
 
-      if (numeros > 0)
-        positivos++;
-
-      else if (numeros < 0)
-        negativos++;
-
-      else
-        nulos++;
 
     }
 
-    media = (float) soma / n;
+Console.WriteLine(saldo);
 
-Console.WriteLine($"Soma {soma}");
-Console.WriteLine($"Media {media}");
-Console.WriteLine($"O maior{maior}");
-Console.WriteLine($"O menor {menor}");
-Console.WriteLine($"Pares {pares}");
-Console.WriteLine($"Impares {impares}");
-Console.WriteLine($"Positivos {positivos}");
-Console.WriteLine($"Negativos {negativos}");
-Console.WriteLine($"Nulos {nulos}");
+
 
 
 

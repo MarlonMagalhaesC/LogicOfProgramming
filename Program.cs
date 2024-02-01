@@ -1,65 +1,25 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Xml;
 
 class Program
 {
-  static void Main()
-  {
-
-    int n, x;
-    float saldo, operacao;
-
-
-    Console.WriteLine("Digite o sado inicial da conta: ");
-    saldo = float.Parse(Console.ReadLine());
-
-    Console.WriteLine("Digite quantas operacoes foram feitas; ");
-    n = int.Parse(Console.ReadLine());
-
-    for (int i = 1; i <= n; i++)
+    static void Main()
     {
-      Console.WriteLine("Digite 1 para credito: ");
-      Console.WriteLine("Digite 2 para debito ");
-      x = int.Parse(Console.ReadLine());
+        int x, y;
 
-      if (x == 1)
-      {
-        Console.WriteLine("Digite o valor da operacao: ");
-        operacao = float.Parse(Console.ReadLine());
+        Console.WriteLine("Digite um numero ");
+        x = int.Parse(Console.ReadLine());
 
-        saldo = saldo + operacao;
-      }
+        Console.WriteLine("Digite um numero ");
+        y = int.Parse(Console.ReadLine());
 
+       int diferenca = (x*y)-(x+y);
+       int resultado = x+y;
 
-      else if (x == 2)
-      {
-        Console.WriteLine("Digite o valor da operacao: ");
-        operacao = float.Parse(Console.ReadLine());
+        for (int i=1; i<=diferenca; i++)
+        {
+          resultado++;
+        }
 
-        saldo = saldo - operacao;
-      }
-
-
+        Console.WriteLine($"{x * y}, {resultado}");
     }
-
-Console.WriteLine(saldo);
-
-
-
-
-
-
-
-
-  }
 }
-
-
-
-
-
-
-
-
-

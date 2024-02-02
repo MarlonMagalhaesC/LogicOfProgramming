@@ -4,23 +4,20 @@ class Program
 {
     static void Main()
     {
-        int x, y, produto, adicao;
+        int x, y;
+        double potencia = 1;
 
-        Console.WriteLine("Digite um numero ");
+        Console.WriteLine("Digite um número (base): ");
         x = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Digite um numero ");
+        Console.WriteLine("Digite um número (expoente): ");
         y = int.Parse(Console.ReadLine());
 
-        produto = x * y;
-        adicao = x + y;
-
-        // Correção no loop while
-        while (produto != adicao)
+        for (int i = 1; i <= y; i++)
         {
-            adicao = adicao + 1;
+            potencia *= x; // Multiplicação sucessiva para calcular x^y
         }
 
-        Console.WriteLine($"{x * y}, {adicao}");
+        Console.WriteLine($"Potência de {x} elevado a {y} é: {potencia}");
     }
 }

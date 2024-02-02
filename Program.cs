@@ -4,18 +4,33 @@ class Program
 {
     static void Main()
     {
-        int x, fatorial=1;
+        int x, y, z;
+        double media;
 
-        Console.WriteLine("Digite um número: ");
-        x = int.Parse(Console.ReadLine());
 
-       
-        for (int i = 1; i <= x; i++)
+        do
         {
-            fatorial *= i;
-            
-        }
+            Console.WriteLine("Digite x: ");
+            x = int.Parse(Console.ReadLine());
 
-        Console.WriteLine(fatorial);
+            Console.WriteLine("Digite y: ");
+            y = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite z: ");
+            z = int.Parse(Console.ReadLine());
+
+            media = (double)(x + z + y) / 3;
+
+            if (media <30)
+            Console.WriteLine("A media nao pode ser menor que 30. ");
+
+            else 
+            Console.WriteLine($"A media e de {media} ");
+
+        } while (media < 30);
+
+
+
+
     }
 }

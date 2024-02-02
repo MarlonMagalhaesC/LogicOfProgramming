@@ -4,11 +4,13 @@ class Program
 {
     static void Main()
     {
-        int x, y, z;
+        int x, y, z, n, R = 0;
         double media;
 
+        Console.WriteLine("Digite n: ");
+        n = int.Parse(Console.ReadLine());
 
-        do
+           while (n > R)
         {
             Console.WriteLine("Digite x: ");
             x = int.Parse(Console.ReadLine());
@@ -21,13 +23,12 @@ class Program
 
             media = (double)(x + z + y) / 3;
 
-            if (media <30)
-            Console.WriteLine("A media nao pode ser menor que 30. ");
 
-            else 
             Console.WriteLine($"A media e de {media} ");
 
-        } while (media < 30);
+            R++;
+
+        }
 
 
 

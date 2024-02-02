@@ -7,8 +7,14 @@ class Program
         int x, y, z, n;
         double media;
 
-        Console.WriteLine("Digite n: ");
-        n = int.Parse(Console.ReadLine());
+        do
+        {
+            Console.WriteLine("Digite n: ");
+            n = int.Parse(Console.ReadLine());
+
+            if (n < 5)
+                Console.WriteLine("O n nao pode ser menor que 5. ");
+        } while (n < 5);
 
 
         for (int i = 1; i <= n; i++)

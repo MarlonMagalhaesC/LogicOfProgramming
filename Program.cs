@@ -4,13 +4,14 @@ class Program
 {
     static void Main()
     {
-        int x, y, z, n, R = 0;
+        int x, y, z, n;
         double media;
 
         Console.WriteLine("Digite n: ");
         n = int.Parse(Console.ReadLine());
 
-           while (n > R)
+
+        for (int i = 1; i <= n; i++)
         {
             Console.WriteLine("Digite x: ");
             x = int.Parse(Console.ReadLine());
@@ -26,11 +27,8 @@ class Program
 
             Console.WriteLine($"A media e de {media} ");
 
-            R++;
 
         }
-
-
 
 
     }

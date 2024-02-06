@@ -1,37 +1,36 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 class Program
 {
     static void Main()
     {
-        int n;
+        int n, idade, i = 0, soma = 0;
+        double media;
 
-        Console.WriteLine("Digite um valor inteiro positivo n:");
-        n = int.Parse(Console.ReadLine());
+        Console.WriteLine("Calcule a media da turma");
 
-        Console.WriteLine("Inteiros positivos: ");
-
-        for (int i = 1; i <= n; i++)
+        do
         {
-            Console.WriteLine(i);
-        }
+            i++;
+            Console.WriteLine($"Digite a idade da {i}o pessoa: ");
+            idade = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Inteiros positivos Pares: ");
+            if (idade > 0)
+            {
+               soma += idade;
+            }
 
-        for (int i = 2; i <= n * 2; i++)
-        {
-            if (i % 2 == 0)
-                Console.WriteLine(i);
-        }
+        } while (idade != 0);
 
 
-        
-        Console.WriteLine("Inteiros positivos Impares: ");
+        media = (double)soma / i;
 
-        for (int i = 1; i <= n * 2; i++)
-        {
-            if (i % 2 == 1)
-                Console.WriteLine(i);
-        }
+        Console.WriteLine($"A media sera de: {media} ");
+
+
+
+
     }
 }

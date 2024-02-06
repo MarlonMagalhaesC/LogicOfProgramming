@@ -7,24 +7,40 @@ class Program
 {
     static void Main()
     {
-        int n, cont=0;
+        int n, cont = 0, contprimos = 0;
 
         Console.WriteLine("Digite um numero inteiro: ");
         n = int.Parse(Console.ReadLine());
 
-         for (int i=1; i<=n; i++)
-         {
-            if (n % i == 0)
-            cont++;
-       
+        for (int i = 2; i <= n; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                if (i % j == 0)
 
-         }
+                    cont++;
+            }
 
-         if (cont != 2)
-         Console.WriteLine($"{n} nao e primo");
+            if (cont == 2)
+            {
+                Console.WriteLine($"{i} e primo");
+                contprimos++;
+            }
+            cont = 0;
+        }
 
-         else 
-         Console.WriteLine($"{n}e primo");
+        Console.WriteLine($" total de primos: {contprimos} ");
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

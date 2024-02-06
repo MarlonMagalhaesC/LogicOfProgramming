@@ -7,28 +7,24 @@ class Program
 {
     static void Main()
     {
-        int pares = 0, impares = 0, i = 0, n = 0;
+        int n, cont=0;
 
+        Console.WriteLine("Digite um numero inteiro: ");
+        n = int.Parse(Console.ReadLine());
 
-        while (n != -1)
-        {
+         for (int i=1; i<=n; i++)
+         {
+            if (n % i == 0)
+            cont++;
+       
 
-            i++;
+         }
 
-            Console.WriteLine($"Digite o {i}o numero inteiro positivo: ");
-            n = int.Parse(Console.ReadLine());
+         if (cont != 2)
+         Console.WriteLine($"{n} nao e primo");
 
-            if (n % 2 == 0)
-                pares++;
-
-            else
-                impares++;
-
-        }
-
-        Console.WriteLine(pares);
-        Console.WriteLine(impares - 1);
-
+         else 
+         Console.WriteLine($"{n}e primo");
 
 
     }

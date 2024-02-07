@@ -1,36 +1,47 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+
 
 class Program
 {
     static void Main()
     {
-        int n, cont = 0, contprimos = 0;
+        int idade, flag = 0, i = 1, naoeleitor = 0, eobrigatorio = 0, efacultativo = 0;
 
-        Console.WriteLine("Digite um numero inteiro: ");
-        n = int.Parse(Console.ReadLine());
-
-        for (int i = 2; i <= n; i++)
+        while (flag != 1)
         {
-            for (int j = 1; j <= i; j++)
-            {
-                if (i % j == 0)
+            Console.WriteLine($"Digite a idade da {i}o pessoa: ");
+            idade = int.Parse(Console.ReadLine());
 
-                    cont++;
+            if (idade >= 0 && idade <= 15)
+            {
+                Console.WriteLine($"Status {i}o pessoa: não eleitor");
+                naoeleitor++;
             }
 
-            if (cont == 2)
+            else if (idade >= 18 && idade < 71)
             {
-                Console.WriteLine($"{i} e primo");
-                contprimos++;
+                Console.WriteLine($"Status {i}o pessoa: eleitor obrigatorio");
+                eobrigatorio++;
             }
-            cont = 0;
+
+            else if (idade > 15 && idade < 18 || idade > 70)
+            {
+                Console.WriteLine($"Status {i}o pessoa: eleitor facultativo");
+                efacultativo++;
+            }
+
+            else
+                flag++;
+
+            i++;
         }
 
-        Console.WriteLine($" total de primos: {contprimos} ");
-// 25 questao
+
+        Console.WriteLine($"Total nao eleitores: {naoeleitor}");
+        Console.WriteLine($"Total eleitor obrigatorio: {eobrigatorio}");
+        Console.WriteLine($"Total eleitor facultativo: {efacultativo}");
+
 
 
 

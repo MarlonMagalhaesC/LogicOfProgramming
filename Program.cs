@@ -30,7 +30,7 @@ class Program
         }
 
         Console.WriteLine($" total de primos: {contprimos} ");
-
+//
 
 
 

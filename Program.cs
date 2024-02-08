@@ -5,31 +5,18 @@ class Program
 {
     static void Main()
     {
-        int i = 1, numeros, soma = 0, flag = 0;
-        float media;
+        int n, fatorial = 1;
 
+        Console.WriteLine("Digite um numero: ");
+        n = int.Parse(Console.ReadLine());
 
-
-        while (flag != -1)
+        for (int i = 1; i <= n; i++)
         {
-            Console.Write($"Digite o {i}o numero:");
-            numeros = int.Parse(Console.ReadLine());
-
-            if (numeros >= 0)
-            {
-                soma += numeros;
-                i++;
-            }
-
-            else
-                flag--;
+            fatorial *= i;
 
         }
+        Console.WriteLine($"O fatorial de {n} sera de {fatorial}");
 
-        media = (float)soma / (i - 1);
-
-        Console.WriteLine($"A soma sera de: {soma}");
-        Console.WriteLine($"A media sera de: {media}");
 
 
 

@@ -1,58 +1,37 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
-
 
 class Program
 {
     static void Main()
     {
-        int idade, flag = 0, i = 1, naoeleitor = 0, eobrigatorio = 0, efacultativo = 0;
+        int x, resultado, pontos = 0;
 
-        while (flag != 1)
+        Console.WriteLine("Digite a quantidade de jogos realizados pela equipe: ");
+        x = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= x; i++)
         {
-            Console.WriteLine($"Digite a idade da {i}o pessoa: ");
-            idade = int.Parse(Console.ReadLine());
+            Console.Write($"Digite o resultado do {i}º jogo: (1 para vitória, 2 para derrota ou 3 para empate). ");
+            resultado = int.Parse(Console.ReadLine());
 
-            if (idade >= 0 && idade <= 15)
+            switch (resultado)
             {
-                Console.WriteLine($"Status {i}o pessoa: não eleitor");
-                naoeleitor++;
+                case 1:
+                    pontos += 3;
+                    break;
+                case 2:
+                    // Derrota não vale ponto
+                    break;
+                case 3:
+                    pontos += 1;
+                    break;
+                default:
+                    Console.WriteLine("Resultado inválido. Digite novamente.");
+                    i--; 
+                    break;
             }
-
-            else if (idade >= 18 && idade < 71)
-            {
-                Console.WriteLine($"Status {i}o pessoa: eleitor obrigatorio");
-                eobrigatorio++;
-            }
-
-            else if (idade > 15 && idade < 18 || idade > 70)
-            {
-                Console.WriteLine($"Status {i}o pessoa: eleitor facultativo");
-                efacultativo++;
-            }
-
-            else
-                flag++;
-
-            i++;
         }
 
-
-        Console.WriteLine($"Total nao eleitores: {naoeleitor}");
-        Console.WriteLine($"Total eleitor obrigatorio: {eobrigatorio}");
-        Console.WriteLine($"Total eleitor facultativo: {efacultativo}");
-
-
-
-
-
-
-
-
-
-
-
-
-
+        Console.WriteLine($"Pontuação final da equipe: {pontos} pontos.");
     }
 }

@@ -4,34 +4,62 @@ class Program
 {
     static void Main()
     {
-        int x, resultado, pontos = 0;
+        int n, i;
 
-        Console.WriteLine("Digite a quantidade de jogos realizados pela equipe: ");
-        x = int.Parse(Console.ReadLine());
+        Console.WriteLine("Números inteiros de 0 a 50: ");
 
-        for (int i = 1; i <= x; i++)
+        for (i = 0; i <= 50; i++)
         {
-            Console.Write($"Digite o resultado do {i}º jogo: (1 para vitória, 2 para derrota ou 3 para empate). ");
-            resultado = int.Parse(Console.ReadLine());
+            Console.Write($"{i}-");
+        }
+        Console.WriteLine();
 
-            switch (resultado)
-            {
-                case 1:
-                    pontos += 3;
-                    break;
-                case 2:
-                    // Derrota não vale ponto
-                    break;
-                case 3:
-                    pontos += 1;
-                    break;
-                default:
-                    Console.WriteLine("Resultado inválido. Digite novamente.");
-                    i--; 
-                    break;
-            }
+        Console.WriteLine("Números inteiros pares de 0 a 50: ");
+
+        for (i = 0; i <= 50; i++)
+        {
+            if (i % 2 == 0)
+                Console.Write($"{i}-");
+        }
+        Console.WriteLine();
+
+         Console.WriteLine("Números inteiros múltiplos de 3 de 1 a 50:");
+          for (i = 1; i <= 50; i++)
+        {
+            if (i % 3 == 0)
+                Console.Write($"{i}-");
+        }
+        Console.WriteLine();
+
+          Console.WriteLine("Números inteiros pares e múltiplos de 3 de 0 a 50:");
+          for (i = 1; i <= 50; i++)
+        {
+            if (i % 3 == 0 && i % 2 == 0)
+                Console.Write($"{i}-");
         }
 
-        Console.WriteLine($"Pontuação final da equipe: {pontos} pontos.");
+        Console.WriteLine();
+
+          Console.WriteLine("Números inteiros de 100 a 1 (em ordem decrescente):");
+          for (i = 100; i >= 1; i--)
+        {
+                Console.Write($"{i}-");
+        }
+        Console.WriteLine();
+
+        Console.WriteLine("Quadrado dos números inteiros no intervalo fechado de 1 a 20:");
+
+          for (i = 1; i <= 20; i++)
+        {
+            
+                Console.Write($"{Math.Pow(i,2)}-");
+        }
+
+        
+
+
+
+
+
     }
 }

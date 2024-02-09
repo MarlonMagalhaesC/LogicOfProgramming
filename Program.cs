@@ -1,21 +1,32 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿
+
+using System.Reflection;
 
 class Program
 {
     static void Main()
     {
-        int n, fatorial = 1;
+        int n;
 
-        Console.WriteLine("Digite um numero: ");
+        Console.WriteLine("Digite o tamanho do vetor: ");
         n = int.Parse(Console.ReadLine());
 
-        for (int i = 1; i <= n; i++)
-        {
-            fatorial *= i;
+        int[] V = new int[n];
 
+        for (int i = 0; i<V.Length; i++)
+        {
+         Console.WriteLine($"Digite o elemento {i+1}o do Vetor: ");
+         V[i] = int.Parse(Console.ReadLine());
         }
-        Console.WriteLine($"O fatorial de {n} sera de {fatorial}");
+
+         Console.WriteLine(" Vetor: ");
+          for (int i = 0; i<V.Length; i++)
+        {
+         Console.WriteLine(V[i]);
+        
+        }
+
+
 
 
 

@@ -7,9 +7,9 @@ class Program
     static void Main()
     {
 
-        int n, x, cont = 0;
+        int n, omaior = int.MinValue;
 
-        Console.WriteLine("Digite n: ");
+        Console.WriteLine("Digite um numero inteiro n: ");
         n = int.Parse(Console.ReadLine());
 
         int[] V = new int[n];
@@ -19,25 +19,12 @@ class Program
             Console.WriteLine($"Digite o {i + 1}o elemento do vetor: ");
             V[i] = int.Parse(Console.ReadLine());
 
+            if (V[i] > omaior)
+                omaior = V[i];
+
         }
 
-        Console.WriteLine("Digite x: ");
-        x = int.Parse(Console.ReadLine());
-
-        for (int i = 0; i < V.Length; i++)
-        {
-            if (x == V[i])
-                cont++;
-        }
-
-        if (cont > 0 )
-        Console.WriteLine($"{x} aparece no vetor: ");
-
-        else 
-        Console.WriteLine($" {x} nao aparece no vetor: ");
-
-
-
+        Console.WriteLine($"{omaior} e maior do vetor: ");
 
 
         //

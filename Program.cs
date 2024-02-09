@@ -1,33 +1,55 @@
 ﻿
 
-using System.Reflection;
-
 class Program
 {
     static void Main()
     {
+        int n, aux = 2;
 
-        int n, omaior = int.MinValue;
-
-        Console.WriteLine("Digite um numero inteiro n: ");
+        Console.WriteLine("Digite um numero inteiro: ");
         n = int.Parse(Console.ReadLine());
 
-        int[] V = new int[n];
+        int[] VP = new int[n];
 
-        for (int i = 0; i < V.Length; i++)
+        for (int i = 0; i < VP.Length;)
         {
-            Console.WriteLine($"Digite o {i + 1}o elemento do vetor: ");
-            V[i] = int.Parse(Console.ReadLine());
 
-            if (V[i] > omaior)
-                omaior = V[i];
+            if (primo(aux) == true)
+            {
+                VP[i] = aux;
+                i++;
+            }
+
+            aux++;
+        }
+
+        Console.WriteLine("Vetor: ");
+        for (int i = 0; i < VP.Length; i++)
+        {
+            Console.WriteLine(VP[i]);
 
         }
 
-        Console.WriteLine($"{omaior} e maior do vetor: ");
 
 
         //
 
+    }
+
+    static int divisores(int n)
+    {
+        int i, cont = 0;
+        for (i = 1; i <= n; i++)
+            if (n % i == 0)
+                cont++;
+        return (cont);
+    }
+
+    static bool primo(int n)
+    {
+        if (divisores(n) > 2)
+            return (false);
+        else
+            return (true);
     }
 }

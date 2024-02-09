@@ -4,52 +4,57 @@ class Program
 {
     static void Main()
     {
-        int n, aux = 2;
+        int n, cont = 0;
 
-        Console.WriteLine("Digite um numero inteiro: ");
+        Console.WriteLine("Digite o número de dezenas que uma determinada pessoa apostou na MegaSena: ");
         n = int.Parse(Console.ReadLine());
 
-        int[] VP = new int[n];
+        int[] VA = new int[n];
+        int[] VS = new int[6];
 
-        for (int i = 0; i < VP.Length;)
+        for (int i = 0; i < VA.Length; i++)
         {
+            Console.WriteLine($"Digite a {i + 1}o dezena que a pessoa apostou: ");
+            VA[i] = int.Parse(Console.ReadLine());
+        }
 
-            if (primo(aux) == true)
+        for (int i = 0; i < VS.Length; i++)
+        {
+            Console.WriteLine($"Digite a {i + 1}o dezena que foi sorteada: ");
+            VS[i] = int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine("Vetor que a pessoa apostou: ");
+        for (int i = 0; i < VA.Length; i++)
+        {
+            Console.WriteLine(VA[i]);
+        }
+
+        Console.WriteLine("Vetor que foi sorteado: ");
+
+        for (int i = 0; i < VS.Length; i++)
+        {
+            Console.WriteLine(VS[i]);
+        }
+
+        for (int i = 0; i < VA.Length; i++)
+        {
+            for (int j = 0; j < VS.Length; j++)
             {
-                VP[i] = aux;
-                i++;
+                if (VA[i] == VS[j])
+                {
+                    cont++;
+                    break;
+                }
             }
-
-            aux++;
         }
 
-        Console.WriteLine("Vetor: ");
-        for (int i = 0; i < VP.Length; i++)
-        {
-            Console.WriteLine(VP[i]);
-
-        }
+ Console.WriteLine($"A pessoa acertou {cont}dezenas: ");
 
 
 
-        //
 
-    }
 
-    static int divisores(int n)
-    {
-        int i, cont = 0;
-        for (i = 1; i <= n; i++)
-            if (n % i == 0)
-                cont++;
-        return (cont);
-    }
 
-    static bool primo(int n)
-    {
-        if (divisores(n) > 2)
-            return (false);
-        else
-            return (true);
     }
 }

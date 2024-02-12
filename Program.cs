@@ -4,60 +4,44 @@ class Program
 {
     static void Main()
     {
-        int i, contp = 0, conti = 0, indexp = 0, indexi = 0, somap = 0, somai = 0;
-        float mediap, mediai;
+        int q1, q2, cont = 0;
 
-        int[] V = new int[10];
+        Console.WriteLine("Digite um numero: ");
+        q1 = int.Parse(Console.ReadLine());
 
-        for (i = 0; i < V.Length; i++)
+        Console.WriteLine("Digite um numero: ");
+        q2 = int.Parse(Console.ReadLine());
+
+        int[] V1 = new int[q1];
+
+        int[] V2 = new int[q2];
+
+        for (int i = 0; i < V1.Length; i++)
         {
-            Console.WriteLine($"Digite o {i+1}o elemento do Vetor: ");
-            V[i] = int.Parse(Console.ReadLine());
-
-            if (V[i] % 2 == 0)
-                contp++;
-
-            else
-                conti++;
+            Console.WriteLine($"Digite o {i + 1}o elemento do vetor 1: ");
+            V1[i] = int.Parse(Console.ReadLine());
         }
 
-        int[] VP = new int[contp];
-        int[] VI = new int[conti];
-
-        for (i = 0; i < V.Length; i++)
+        for (int i = 0; i < V2.Length; i++)
         {
-            if (V[i] % 2 == 0)
+            Console.WriteLine($"Digite o {i + 1}o elemento do vetor 2: ");
+            V2[i] = int.Parse(Console.ReadLine());
+        }
+
+        for (int i = 0; i < V1.Length; i++)
+        {
+            for (int j = 0; j < V2.Length; j++)
             {
-                VP[indexp] = V[i];
-                indexp++;
-                somap += V[i];
+                if (V1[i] == V2[j])
+                    cont++;
             }
-            else
-            {
-                VI[indexi] = V[i];
-                indexi++;
-                somai += V[i];
-            }
-        }
-        Console.WriteLine($"VP");
-        for (i = 0; i < VP.Length; i++)
-        {
-            Console.WriteLine(VP[i]);
+
+              Console.WriteLine($" {V1[i]} presente {cont}vezes");
+              cont=0;
+
         }
 
-        Console.WriteLine($"VI");
-        for (i = 0; i < VI.Length; i++)
-        {
-            Console.WriteLine(VI[i]);
-        }
-
-        mediap = (float)somap / VP.Length;
-        mediai = (float)somai / VI.Length;
-
-        Console.WriteLine($"A soma do Vetor de pares sera {somap} e a media {mediap}");
-        Console.WriteLine($"A soma do Vetor de impares sera {somai} e a media {mediai}");
-
-
+       
 
     }
 }

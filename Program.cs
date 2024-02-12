@@ -1,44 +1,44 @@
 ﻿using System;
+using System.Diagnostics;
 
 class Program
 {
     static void Main()
     {
-        int n;
+        int n, x, cont = 0;
 
         Console.WriteLine("Digite um número: ");
         n = int.Parse(Console.ReadLine());
 
-        int[] I = new int[n];
-        int[] P = new int[n];
+        int[] V = new int[n];
 
-
-        int valorImpar = 1;
-        int valorPar = 2;
-
-
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < V.Length; i++)
         {
-            I[i] = valorImpar;
-            P[i] = valorPar;
-
-            valorImpar += 2;
-            valorPar += 2;
-
-        }
-        Console.WriteLine("Ímpares:");
-        for (int i = 0; i < n; i++)
-        {
-            Console.WriteLine(I[i]);
+            Console.WriteLine($"Digite o {i + 1} elemento do vetor: ");
+            V[i] = int.Parse(Console.ReadLine());
         }
 
-        Console.WriteLine("Pares:");
-        for (int i = 0; i < n; i++)
+        Console.WriteLine("Digite um número: ");
+        x = int.Parse(Console.ReadLine());
+
+
+        for (int i = 0; i < V.Length; i++)
         {
-            Console.WriteLine(P[i]);
+            if (x == V[i])
+            {
+                cont++;
+            }
         }
 
+        if (cont > 0)
+                Console.WriteLine($"{x} esta entre os numeros armazenados {cont} vez(es)!");
 
-        
+       else
+            Console.WriteLine($"{x} NAO esta entre os numeros armazenados.");
+
+
+
+
+
     }
 }

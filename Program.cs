@@ -1,30 +1,44 @@
-﻿
+﻿using System;
 
 class Program
 {
     static void Main()
     {
-        int i, soma = 0;
-        float media;
+        int n;
 
-        int[] V = new int[10];
+        Console.WriteLine("Digite um número: ");
+        n = int.Parse(Console.ReadLine());
 
-        for (i = 0; i < 10; i++)
+        int[] I = new int[n];
+        int[] P = new int[n];
+
+
+        int valorImpar = 1;
+        int valorPar = 2;
+
+
+        for (int i = 0; i < n; i++)
         {
-            Console.WriteLine($"Digite o {i + 1} numero");
-            V[i] = int.Parse(Console.ReadLine());
-            soma += V[i];
+            I[i] = valorImpar;
+            P[i] = valorPar;
+
+            valorImpar += 2;
+            valorPar += 2;
+
+        }
+        Console.WriteLine("Ímpares:");
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine(I[i]);
         }
 
-        media = (float)soma / 10;
+        Console.WriteLine("Pares:");
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine(P[i]);
+        }
+
+
         
-        for (i = 0; i < V.Length; i++)
-        {
-           if (V[i] > media){
-           Console.WriteLine($"o {i + 1}o elemeento, {V[i]} e maior que a media.");
-           }
-        }
-
-
     }
 }

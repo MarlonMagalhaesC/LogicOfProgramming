@@ -20,6 +20,16 @@ class Program
         {
             Console.WriteLine($"Digite o {i + 1}o elemento do vetor 1: ");
             V1[i] = int.Parse(Console.ReadLine());
+
+            for (int j=0; j<i; j++)
+            {
+              if (V1[i] == V1[j])
+              {
+                Console.WriteLine("Nao e permitido a repeticao de numeros: ");
+                i--;
+              }
+
+            }
         }
 
         for (int i = 0; i < V2.Length; i++)

@@ -4,74 +4,58 @@ class Program
 {
     static void Main()
     {
-        int n, cont = 0;
+        int i, contp = 0, conti = 0, indexp = 0, indexi = 0, somap = 0, somai = 0;
+        float mediap, mediai;
 
+        int[] V = new int[10];
 
-
-        do
+        for (i = 0; i < V.Length; i++)
         {
-            Console.WriteLine("Digite o número de dezenas que uma determinada pessoa apostou na MegaSena, (entre 6-15): ");
-            n = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Digite o {i+1}o elemento do Vetor: ");
+            V[i] = int.Parse(Console.ReadLine());
 
+            if (V[i] % 2 == 0)
+                contp++;
 
-        } while (n < 6 || n > 15);
+            else
+                conti++;
+        }
 
+        int[] VP = new int[contp];
+        int[] VI = new int[conti];
 
-
-        int[] VA = new int[n];
-        int[] VS = new int[6];
-
-        for (int i = 0; i < VA.Length; i++)
+        for (i = 0; i < V.Length; i++)
         {
-            Console.WriteLine($"Digite a {i + 1}o dezena que a pessoa apostou: (entre 1 e 60) ");
-            VA[i] = int.Parse(Console.ReadLine());
-            if (VA[i] < 1 || VA[i] > 60)
+            if (V[i] % 2 == 0)
             {
-                Console.WriteLine("(entre 1 e 60)");
-                i--;
+                VP[indexp] = V[i];
+                indexp++;
+                somap += V[i];
+            }
+            else
+            {
+                VI[indexi] = V[i];
+                indexi++;
+                somai += V[i];
             }
         }
-
-        for (int i = 0; i < VS.Length; i++)
+        Console.WriteLine($"VP");
+        for (i = 0; i < VP.Length; i++)
         {
-            Console.WriteLine($"Digite a {i + 1}o dezena que foi sorteada: ");
-            VS[i] = int.Parse(Console.ReadLine());
-            if (VS[i] < 1 || VS[i] > 60)
-            {
-                Console.WriteLine("(entre 1 e 60)");
-                i--;
-            }
+            Console.WriteLine(VP[i]);
         }
 
-        Console.WriteLine("Vetor que a pessoa apostou: ");
-        for (int i = 0; i < VA.Length; i++)
+        Console.WriteLine($"VI");
+        for (i = 0; i < VI.Length; i++)
         {
-            Console.WriteLine(VA[i]);
+            Console.WriteLine(VI[i]);
         }
 
-        Console.WriteLine("Vetor que foi sorteado: ");
+        mediap = (float)somap / VP.Length;
+        mediai = (float)somai / VI.Length;
 
-        for (int i = 0; i < VS.Length; i++)
-        {
-            Console.WriteLine(VS[i]);
-        }
-
-        for (int i = 0; i < VA.Length; i++)
-        {
-            for (int j = 0; j < VS.Length; j++)
-            {
-                if (VA[i] == VS[j])
-                {
-                    cont++;
-                    break;
-                }
-            }
-        }
-
-        Console.WriteLine($"A pessoa acertou {cont}dezenas: ");
-
-
-
+        Console.WriteLine($"A soma do Vetor de pares sera {somap} e a media {mediap}");
+        Console.WriteLine($"A soma do Vetor de impares sera {somai} e a media {mediai}");
 
 
 

@@ -5,7 +5,7 @@ class Program
 {
     static void Main()
     {
-        int q1, q2, cont = 0;
+        int q1, q2, cont = 0, omaior=int.MinValue;
 
         Console.WriteLine("Digite q1: ");
         q1 = int.Parse(Console.ReadLine());
@@ -27,23 +27,20 @@ class Program
         {
             Console.WriteLine($"Digite o {i + 1}o elemento: ");
             V2[i] = int.Parse(Console.ReadLine());
+
+            if (V2[i] > omaior)
+            {
+              omaior = V2[i];
+            }
         }
 
-        Console.WriteLine("");
+        Console.WriteLine(omaior);
 
         for (int i = 0; i < V1.Length; i++)
         {
-            for (int j = 0; j < V2.Length; j++)
-            {
-                if (V1[i] > V2[j])
-                    cont++;
-            }
-
-            if (cont == V2.Length)
-                Console.WriteLine($"{V1[i]} e maior que todos os elementos de V2.");
-
-                cont = 0;
-
+           if (V1[i]> omaior)
+           Console.WriteLine($"O {V1[i]} e maior que todos os elementos de V2");
+           
         }
 
 

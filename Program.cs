@@ -5,26 +5,40 @@ class Program
     static void Main()
     {
 
-        float[] Pesos = new float[4];
-        float media, soma = 0;
+        int[] V = new int[10];
 
 
-        for (int i = 0; i < Pesos.Length; i++)
+
+        for (int i = 0; i < V.Length; i++)
         {
-            Console.WriteLine($"Digite o peso da {i + 1}o pessoa: ");
-            Pesos[i] = float.Parse(Console.ReadLine());
-
-            soma += Pesos[i];
+            Console.WriteLine($"Digite o elemento {i + 1}o: ");
+            V[i] = int.Parse(Console.ReadLine());
         }
 
-        media = soma / Pesos.Length;
+        Console.WriteLine($"Vetor: ");
 
-           for (int i = 0; i < Pesos.Length; i++)
+        for (int i = 0; i < V.Length; i++)
         {
-            if(Pesos[i] < media)
-            Console.WriteLine(Pesos[i]);
-            
+            Console.WriteLine(V[i]);
         }
+        Console.WriteLine($"");
+
+        for (int i = 0; i < V.Length - 1; i++)
+
+        {
+            V[i] = V[i + 1];
+        }
+
+        V[V.Length - 1] = 0;
+
+        
+
+        Console.WriteLine($"Vetor modificado: ");
+        for (int i = 0; i < V.Length; i++)
+        {
+            Console.WriteLine(V[i]);
+        }
+
 
 
 

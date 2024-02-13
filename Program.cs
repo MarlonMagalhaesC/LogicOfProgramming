@@ -1,46 +1,53 @@
 ﻿using System;
-using System.Diagnostics;
 
 class Program
 {
     static void Main()
     {
-        int q1, q2, cont = 0, omaior=int.MinValue;
 
-        Console.WriteLine("Digite q1: ");
-        q1 = int.Parse(Console.ReadLine());
+        string[] Nomes = new string[3];
+        float[] Notas = new float[3];
+        int[] Frequencias = new int[3];
+        string[] Situacao = new string[3];
 
-        Console.WriteLine("Digite q2: ");
-        q2 = int.Parse(Console.ReadLine());
+        
 
 
-        int[] V1 = new int[q1];
-        int[] V2 = new int[q2];
 
-        for (int i = 0; i < V1.Length; i++)
+        for (int i = 0; i < Nomes.Length; i++)
         {
-            Console.WriteLine($"Digite o {i + 1}o elemento: ");
-            V1[i] = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Digite o nome do {i + 1}o aluno: ");
+            Nomes[i] = Console.ReadLine();
+
+            Console.WriteLine($"Digite a nota do {i + 1}o aluno: ");
+            Notas[i] = float.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Digite a frequencia do {i + 1}o aluno: ");
+            Frequencias[i] = int.Parse(Console.ReadLine());
         }
 
-        for (int i = 0; i < V2.Length; i++)
+        for (int i = 0; i < Nomes.Length; i++)
         {
-            Console.WriteLine($"Digite o {i + 1}o elemento: ");
-            V2[i] = int.Parse(Console.ReadLine());
-
-            if (V2[i] > omaior)
+            if (Notas[i] >= 60 && Frequencias[i] >= 75)
             {
-              omaior = V2[i];
+                Console.WriteLine($"O aluno da posicao {i + 1}, {Nomes[i]} foi aprovado.");
+                Situacao[i] = "Aprovado";
             }
+            else
+                Situacao[i] = "Reprovado";
         }
 
-        Console.WriteLine(omaior);
 
-        for (int i = 0; i < V1.Length; i++)
+
+        Console.WriteLine("Situacao de cada aluno:");
+
+        for (int i = 0; i < Nomes.Length; i++)
         {
-           if (V1[i]> omaior)
-           Console.WriteLine($"O {V1[i]} e maior que todos os elementos de V2");
-           
+            if (Situacao[i] == "Aprovado")
+                Console.WriteLine($"A aluno {Nomes[i]} foi aprovado: ");
+
+            else
+                Console.WriteLine($"A aluno {Nomes[i]} foi reprovado: ");
         }
 
 
@@ -50,5 +57,12 @@ class Program
 
 
 
-    }
+
+
+
+
+
+
+
+}
 }

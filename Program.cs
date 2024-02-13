@@ -1,53 +1,52 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Diagnostics.Contracts;
 
 class Program
 {
     static void Main()
     {
+        int q1, q2, cont = 0, cont2 = 0;
 
-        int n;
-        float media, soma = 0, cont=0;
 
-        Console.WriteLine("Digite um numero: ");
-        n = int.Parse(Console.ReadLine());
+        Console.WriteLine("Digite o tamanho do vetor 1: ");
+        q1 = int.Parse(Console.ReadLine());
 
-        string[] Placas = new string[n];
-        float[] Multas = new float[n];
+        Console.WriteLine("Digite o tamanho do vetor 2: ");
+        q2 = int.Parse(Console.ReadLine());
 
-        for (int i = 0; i < Placas.Length; i++)
+        int[] V1 = new int[q1];
+        int[] V2 = new int[q2];
+
+        for (int i = 0; i < V1.Length; i++)
         {
-            Console.WriteLine($"Digite a placa do {i + 1}o veiculo: ");
-            Placas[i] = Console.ReadLine();
-
-            Console.WriteLine($"Digite a multa do {i + 1}o veiculo: ");
-            Multas[i] = float.Parse(Console.ReadLine());
-
-            if (Multas[i] > 0)
-            {
-                soma += Multas[i];
-                cont++;
-            }
+            Console.WriteLine($"Digite o {i + 1}o elemento do vetor 1: ");
+            V1[i] = int.Parse(Console.ReadLine());
         }
 
-        media = soma / cont;
-        Console.WriteLine($"media: {media} ");
-
-        Console.WriteLine($"Possuem a multa superior a media: ");
-        for (int i = 0; i < Multas.Length; i++)
+        for (int i = 0; i < V2.Length; i++)
         {
-            if (Multas[i] > media)
-            {
-             Console.WriteLine($" Veiculo {i+1}, Placa: {Placas[i]}, {Multas[i]}");
-            }
+            Console.WriteLine($"Digite o {i + 1}o elemento do vetor 2: ");
+            V2[i] = int.Parse(Console.ReadLine());
         }
 
+        for (int i = 0; i < V1.Length; i++)
+        {
+            for (int j = 0; j < V2.Length; j++)
+            {
+                if (V1[i] % V2[j] == 0)
+                    cont++;
+            }
 
+            if (cont == V2.Length)
+            {
+                Console.WriteLine($"{V1[i]}e multiplo de todos os elementos de V2: ");
+                cont2++;
+            }
 
+            cont = 0;
+        }
 
-
-
+        if (cont2 == 0)
+            Console.WriteLine("Nenhum elemento de V1 e multiplo de todos os elementos de V2");
 
 
 

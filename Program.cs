@@ -12,24 +12,33 @@ class Program
 
         Console.WriteLine($"Total de divisores do numero {n}:\n {RetornaNDivPositivos(n)}");
 
-        EscreveNDivPositivos(n);
+      
+
+       Console.WriteLine(VerificaSeEPrimo(n)); 
 
     }
 
-    static void EscreveNDivPositivos(int n)
+    
+
+
+    static bool VerificaSeEPrimo(int n)
     {
-        int i;
-
-        Console.WriteLine($"O divisores positivos de {n} sao: ");
-
-        for (i = 1; i <= n; i++)
+        if (RetornaNDivPositivos(n) == 2)
         {
-            if (n % i == 0)
-               Console.WriteLine(i);
+            return true;
         }
-       
-    }
 
+        else
+        {
+            return false;
+        }
+
+
+
+
+
+
+    }
 
 
 

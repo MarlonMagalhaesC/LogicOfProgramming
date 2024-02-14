@@ -9,51 +9,50 @@ class Program
         Console.WriteLine("Digite um numero inteiro n:");
         n = int.Parse(Console.ReadLine());
 
-        NprimeirosPos(n);
+        Console.WriteLine("Soma n primeiros positivos:");
+        Console.WriteLine(CalculaSomaNpri(n));
 
-        NprimeirosPares(n);
+        Console.WriteLine("Soma n primeiros positivos pares:");
+        Console.WriteLine(CalculaSomaNpriPares(n));
 
-        NprimeirosImp(n);
-
-
-
+        Console.WriteLine("Soma n primeiros positivos impares:");
+        Console.WriteLine(CalculaSomaNpriImpares(n));
     }
 
-    static void NprimeirosPos(int n)
+    static int CalculaSomaNpri(int n)
     {
-        int i;
-
-        Console.WriteLine("Os n primeiros positivos:");
+        int i, soma = 0;
 
         for (i = 1; i <= n; i++)
         {
-            Console.WriteLine(i);
+
+            soma += i;
         }
+        return (soma);
     }
 
-    static void NprimeirosPares(int n)
+    static int CalculaSomaNpriPares(int n)
     {
-        int i;
+        int i, soma = 0;
 
-        Console.WriteLine("Os n primeiros positivos Pares:");
-
-        for (i = 2; i <= n * 2; i++)
+        for (i = 1; i <= n * 2; i++)
         {
             if (i % 2 == 0)
-                Console.WriteLine(i);
+                soma += i;
         }
+        return (soma);
     }
 
-
-    static void NprimeirosImp(int n)
+    static int CalculaSomaNpriImpares(int n)
     {
-        int i;
+        int i, soma = 0;
 
-        Console.WriteLine("Os n primeiros positivos Impares:");
-        for (i=1; i<=n*2; i++)
+        for (i = 1; i <= n * 2; i++)
         {
-          if (i % 2 == 1)
-                Console.WriteLine(i);
+            if (i % 2 == 1)
+                soma += i;
         }
+        return (soma);
     }
+
 }

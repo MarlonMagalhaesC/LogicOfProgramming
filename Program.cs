@@ -5,25 +5,28 @@ class Program
 {
     static void Main()
     {
-        int i, j, n;
+        int n;
 
         Console.WriteLine("Digite um numero n:");
         n = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Digite um numero i:");
-        i = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Digite j:");
-        j = int.Parse(Console.ReadLine());
-
-        Console.WriteLine(ValidarEntreIeJ(i,j,n));
+         Console.WriteLine($"Total de divisores do numero {n}:\n {RetornaNDivPositivos(n)}");
 
     }
 
-    static bool ValidarEntreIeJ (int i, int j, int n)
-    {
-         return n >= i && n <= j;
+    static int RetornaNDivPositivos (int n)
+    { 
+        int i, cont=0;
+
+        for (i=1;i<=n; i++)
+        {
+          if (n % i == 0)
+          cont++;
+        }
+        return(cont);
     }
+
+    
 
 
 

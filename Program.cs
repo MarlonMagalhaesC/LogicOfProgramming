@@ -5,55 +5,24 @@ class Program
 {
     static void Main()
     {
-        int n;
+        float peso, altura;
 
-        Console.WriteLine("Digite um numero n:");
-        n = int.Parse(Console.ReadLine());
+        Console.WriteLine("Digite o peso:");
+        peso = float.Parse(Console.ReadLine());
 
-        Console.WriteLine($"Total de divisores do numero {n}:\n {RetornaNDivPositivos(n)}");
+        Console.WriteLine("Digite a altura:");
+        altura = float.Parse(Console.ReadLine());
 
-      
-
-       Console.WriteLine(VerificaSeEPrimo(n)); 
-
+        Console.WriteLine(IMC(peso, altura));
     }
 
-    
-
-
-    static bool VerificaSeEPrimo(int n)
+    static double IMC(float peso, float altura)
     {
-        if (RetornaNDivPositivos(n) == 2)
-        {
-            return true;
-        }
+        double imc;
 
-        else
-        {
-            return false;
-        }
+        imc = (double)peso / (altura * 2);
 
-
-
-
-
-
-    }
-
-
-
-
-
-    static int RetornaNDivPositivos(int n)
-    {
-        int i, cont = 0;
-
-        for (i = 1; i <= n; i++)
-        {
-            if (n % i == 0)
-                cont++;
-        }
-        return (cont);
+        return (imc);
     }
 
 

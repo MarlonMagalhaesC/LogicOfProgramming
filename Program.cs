@@ -1,34 +1,46 @@
 ﻿using System;
 using System.ComponentModel.Design;
 using System.Diagnostics;
+using System.Runtime.ExceptionServices;
 
 class Program
 {
     static void Main()
     {
-        int x, y, z;
+        int x;
 
-        Console.WriteLine("Digite o primeiro numero: ");
+        Console.WriteLine("Digite o numero: ");
         x = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Digite o segundo numero: ");
-        y = int.Parse(Console.ReadLine());
+        int[] Vetor = new int[x];
 
-        Console.WriteLine("Digite o terceiro numero: ");
-        z = int.Parse(Console.ReadLine());
+        for (int i = 0; i < Vetor.Length; i++)
+        {
+            Console.WriteLine($"Digite o {i + 1}o elemento: ");
+            Vetor[i] = int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine(CalculaMedia(Vetor));
 
 
-        Console.WriteLine(CalculaMedia(x,y,z));
+
     }
 
 
-    static float CalculaMedia(int x, int y, int z)
+    static float CalculaMedia(int[] Vetor)
     {
         float media;
+        int soma = 0;
 
-        media = (float)(x + y + z) / 3;
+        for (int i = 0; i < Vetor.Length; i++)
+        {
+            soma += Vetor[i];
+        }
+
+        media = (float)soma / Vetor.Length;
 
         return (media);
+
     }
 
 }

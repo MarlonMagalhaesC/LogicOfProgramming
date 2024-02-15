@@ -1,35 +1,35 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Diagnostics;
 
 class Program
 {
     static void Main()
     {
-        float peso, altura;
+        int x, y, z;
 
-        Console.WriteLine("Digite o peso:");
-        peso = float.Parse(Console.ReadLine());
+        Console.WriteLine("Digite o primeiro numero: ");
+        x = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Digite a altura:");
-        altura = float.Parse(Console.ReadLine());
+        Console.WriteLine("Digite o segundo numero: ");
+        y = int.Parse(Console.ReadLine());
 
-        Console.WriteLine(IMC(peso, altura));
+        Console.WriteLine("Digite o terceiro numero: ");
+        z = int.Parse(Console.ReadLine());
+
+
+        Console.WriteLine(CalculaMedia(x,y,z));
     }
 
-    static double IMC(float peso, float altura)
+
+    static float CalculaMedia(int x, int y, int z)
     {
-        double imc;
+        float media;
 
-        imc = (double)peso / (altura * 2);
+        media = (float)(x + y + z) / 3;
 
-        return (imc);
+        return (media);
     }
-
-
-
-
-
-
 
 }
 

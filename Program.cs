@@ -4,27 +4,38 @@ class Program
 {
     static void Main()
     {
-        double a, b;
+        float a, b, c;
 
-        Console.WriteLine("Digite o numero: ");
-        a = double.Parse(Console.ReadLine());
+        Console.WriteLine("Digite a: ");
+        a = float.Parse(Console.ReadLine());
 
-        Console.WriteLine("Digite o numero: ");
-        b = double.Parse(Console.ReadLine());
+        Console.WriteLine("Digite b: ");
+        b = float.Parse(Console.ReadLine());
 
-        Console.WriteLine($"Hipotenusa: {CalculaHipotenusa(a, b)} ");
+        Console.WriteLine("Digite c: ");
+        c = float.Parse(Console.ReadLine());
+
+        Console.WriteLine(CalculaDelta(a,b,c));
 
 
 
     }
 
-    static double CalculaHipotenusa(double a, double b)
+    static double CalculaDelta(float a, float b, float c)
     {
-        double c;
+        double delta, x1, x2;
 
-        c = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
+        delta = (double)Math.Pow(b, 2) - (4 * a * c);
 
-        return c;
+        x1 = (-b + Math.Sqrt(delta)) / (2 * a);
+
+        x2 = (-b - Math.Sqrt(delta)) / (2 * a);
+
+        if (x1 > 0)
+            return x1;
+
+        else
+            return x2;
 
     }
 

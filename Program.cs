@@ -1,47 +1,34 @@
-﻿using System;
-using System.ComponentModel.Design;
-using System.Diagnostics;
-using System.Runtime.ExceptionServices;
+﻿
 
 class Program
 {
     static void Main()
     {
-        int x;
+        double a, b;
 
         Console.WriteLine("Digite o numero: ");
-        x = int.Parse(Console.ReadLine());
+        a = double.Parse(Console.ReadLine());
 
-        int[] Vetor = new int[x];
+        Console.WriteLine("Digite o numero: ");
+        b = double.Parse(Console.ReadLine());
 
-        for (int i = 0; i < Vetor.Length; i++)
-        {
-            Console.WriteLine($"Digite o {i + 1}o elemento: ");
-            Vetor[i] = int.Parse(Console.ReadLine());
-        }
-
-        Console.WriteLine(CalculaMedia(Vetor));
+        Console.WriteLine($"Hipotenusa: {CalculaHipotenusa(a, b)} ");
 
 
 
     }
 
-
-    static float CalculaMedia(int[] Vetor)
+    static double CalculaHipotenusa(double a, double b)
     {
-        float media;
-        int soma = 0;
+        double c;
 
-        for (int i = 0; i < Vetor.Length; i++)
-        {
-            soma += Vetor[i];
-        }
+        c = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
 
-        media = (float)soma / Vetor.Length;
-
-        return (media);
+        return c;
 
     }
+
+
 
 }
 

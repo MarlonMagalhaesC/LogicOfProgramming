@@ -4,17 +4,33 @@ class Program
 {
     static void Main()
     {
-        int x = 10, y = 5;
+        int x,y,z;
 
-        Console.WriteLine(Multiplo(x,y));
+        Console.WriteLine("Digite x: ");
+        x = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Digite y: ");
+        y = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Digite z: ");
+        z = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(ContaMultiplos(x,y,z));
 
     }
 
-    static bool Multiplo(int x, int y)
+    static int ContaMultiplos(int x, int y, int z)
     {
-     return x % y == 0;
-    }
+        int i, cont = 0;
 
+        for (i = x; i <= y; i++)
+        {
+            if (z % i == 0)
+                cont++;
+        }
+
+        return cont;
+    }
 
 
 

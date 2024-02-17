@@ -1,4 +1,6 @@
-﻿class Program
+﻿using System.Net.Mail;
+
+class Program
 {
     static void Main()
     {
@@ -13,17 +15,30 @@
             operacao = Opcoes();
 
             if (operacao == 1)
-
-                saldoatual = Saque(saldoatual);
+            {
+                Console.WriteLine("Voce escolheu saque! ");
+                saldoatual = OperacaoNegativa(saldoatual);
+            }
 
             else if (operacao == 2)
-                saldoatual = Deposito(saldoatual);
+            {
+                {
+                    Console.WriteLine("Voce escolheu deposito! ");
+                    saldoatual = OperacaoPositiva(saldoatual);
+                }
+            }
 
             else if (operacao == 3)
-                saldoatual = PagamentoDeConta(saldoatual);
+            {
+                Console.WriteLine("Voce escolheu Pagamento de conta! ");
+                saldoatual = OperacaoNegativa(saldoatual);
+            }
 
             else if (operacao == 4)
-                saldoatual = Transferencia(saldoatual);
+            {
+                Console.WriteLine("Voce escolheu transferencia! ");
+                saldoatual = OperacaoNegativa(saldoatual);
+            }
 
             else if (operacao == 5)
 
@@ -32,8 +47,6 @@
             else
 
                 Console.WriteLine("Digite um nome valido: ");
-
-
 
             Console.WriteLine($"Seu atual da conta: {saldoatual}");
 
@@ -63,61 +76,30 @@
         return saldoatual;
     }
 
-    static float Saque(float saldoatual)
+    static float OperacaoNegativa(float saldoatual)
     {
-        float saque;
+        float valoroperacao;
 
-        Console.WriteLine("Digite o valor do saque:");
-        saque = float.Parse(Console.ReadLine());
+        Console.WriteLine("Digite o valor da operacao:");
+        valoroperacao = float.Parse(Console.ReadLine());
 
-        saldoatual -= saque;
+        saldoatual -= valoroperacao;
+
+        return saldoatual;
+    }
+
+    static float OperacaoPositiva(float saldoatual)
+    {
+        float valoroperacao;
+
+        Console.WriteLine("Digite o valor da operacao:");
+        valoroperacao = float.Parse(Console.ReadLine());
+
+        saldoatual += valoroperacao;
 
         return saldoatual;
 
     }
-
-    static float Deposito(float saldoatual)
-    {
-        float Deposito;
-
-        Console.WriteLine("Digite o valor deposito:");
-        Deposito = float.Parse(Console.ReadLine());
-
-        saldoatual += Deposito;
-
-        return saldoatual;
-
-    }
-
-    static float PagamentoDeConta(float saldoatual)
-    {
-        float pagamento;
-
-        Console.WriteLine("Digite o valor do pagamento de conta:");
-        pagamento = float.Parse(Console.ReadLine());
-
-        saldoatual -= pagamento;
-
-        return saldoatual;
-
-    }
-
-    static float Transferencia(float saldoatual)
-    {
-        float Transferencia;
-
-        Console.WriteLine("Digite o valor da transferencia de conta:");
-        Transferencia = float.Parse(Console.ReadLine());
-
-        saldoatual -= Transferencia;
-
-        return saldoatual;
-
-    }
-
-
-
-
 
 
 }

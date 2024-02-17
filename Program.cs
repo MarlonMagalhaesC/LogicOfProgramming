@@ -4,56 +4,46 @@ class Program
 {
     static void Main()
     {
-        float a, b, c;
-        double delta;
+        int n;
 
+        Console.WriteLine("Digite n: ");
+        n = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Digite a: ");
-        a = float.Parse(Console.ReadLine());
-
-        Console.WriteLine("Digite b: ");
-        b = float.Parse(Console.ReadLine());
-
-        Console.WriteLine("Digite c: ");
-        c = float.Parse(Console.ReadLine());
-
-        raizequacao(a,b,c);
+        MostraN(n);
 
     }
 
-    static double CalculaDelta(float a, float b, float c)
+
+    static int [] CalculaPosicao(int n)
     {
-        double delta;
+        int[] V = new int[n];
 
-        delta = (double)Math.Pow(b, 2) - (4 * a * c);
-
-        return delta;
-    }
-
-    static void raizequacao(float a, float b, float c)
-    {
-        double delta, x1, x2;
-
-        delta = CalculaDelta(a, b, c);
-
-        if (delta < 0)
-            Console.WriteLine("Nao existe raiz real para essa equacao: ");
-
-
-        else
+        for (int i = 0; i < V.Length; i++)
         {
-            x1 = (-b + Math.Sqrt(delta)) / (2 * a);
-            x2 = (-b - Math.Sqrt(delta)) / (2 * a);
+            V[i] = (i + 1) * 2;
+        }
+        return V;
+    }
 
-            Console.WriteLine($"X1 de {a}, {b}, {c}: {x1}");
-            Console.WriteLine($"X2 de {a}, {b}, {c}: {x2}");
+    static void MostraN(int n)
+    {
+
+        int [] V = CalculaPosicao(n);
+
+        for (int i = 0; i < V.Length; i++)
+        {
+
+            Console.WriteLine(V[i]);
         }
 
 
     }
 
-
-
 }
+
+
+
+
+
 
 

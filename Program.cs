@@ -16,15 +16,21 @@ class Program
         Console.WriteLine("Digite c");
         c = int.Parse(Console.ReadLine());
 
-        Console.WriteLine(validaValores(a, b, c));
+        Console.WriteLine(mostraResultados(a, b, c));
 
     }
 
-    static bool validaValores(int x, int y, int z)
+    static float mostraResultados(int x, int y, int z)
     {
-        return (x + y + z) % x == 0;
-    }
+        int soma;
+        float media = 0;
 
+        soma = x + y + z;
+
+        media = (float)soma / 3;
+        return media;
+
+    }
 
 
 

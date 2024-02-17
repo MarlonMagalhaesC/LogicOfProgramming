@@ -4,27 +4,21 @@ class Program
 {
     static void Main()
     {
-        int numero;
+        int x = 0, y = 40;
 
-        numero = LeituraInteiro("Digite um número inteiro:");
-
-        Console.WriteLine($"Número lido: {numero}");
-
-
-
+        Console.WriteLine(ValidaIntervalo(x, y));
 
     }
 
-    static int LeituraInteiro(string mensagem)
+    static bool ValidaIntervalo(int x, int y)
     {
-        int x;
-
-        Console.WriteLine(mensagem);
-        x = int.Parse(Console.ReadLine());
-
-        return x;
-
+        return x < y;
     }
+
+
+
+
+
 
 
 

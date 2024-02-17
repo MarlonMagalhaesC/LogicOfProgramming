@@ -4,18 +4,16 @@ class Program
 {
     static void Main()
     {
-        int x = 0, y = 40;
+        int x = 10, y = 5;
 
-        Console.WriteLine(ValidaIntervalo(x, y));
+        Console.WriteLine(Multiplo(x,y));
 
     }
 
-    static bool ValidaIntervalo(int x, int y)
+    static bool Multiplo(int x, int y)
     {
-        return x < y;
+     return x % y == 0;
     }
-
-
 
 
 

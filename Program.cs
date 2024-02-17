@@ -4,104 +4,52 @@ class Program
 {
     static void Main()
     {
-        float saldoatual;
-        int operacao;
-
-        saldoatual = PerguntaSaldo();
+        
+        Console.WriteLine(NDivisoresP(PerguntaN()));
 
 
-        do
+
+
+
+    }
+
+    static int PerguntaN()
+    {
+        int n;
+
+        Console.WriteLine("Digite um numero para que seja n:");
+        n = int.Parse(Console.ReadLine());
+
+        return n;
+    }
+
+    static int NDivisoresP(int n)
+    {
+
+        if (n < 0)
         {
-            operacao = Opcoes();
+            return -1;
+        }
 
-            if (operacao == 1)
+        else if (n > 0)
+        {
+            int cont = 0;
+            for (int i = 1; i <= n; i++)
             {
-                Console.WriteLine("Voce escolheu saque! ");
-                saldoatual = OperacaoNegativa(saldoatual);
+                if (n % i == 0)
+                    cont++;
             }
+            return cont;
+        }
 
-            else if (operacao == 2)
-            {
-                {
-                    Console.WriteLine("Voce escolheu deposito! ");
-                    saldoatual = OperacaoPositiva(saldoatual);
-                }
-            }
-
-            else if (operacao == 3)
-            {
-                Console.WriteLine("Voce escolheu Pagamento de conta! ");
-                saldoatual = OperacaoNegativa(saldoatual);
-            }
-
-            else if (operacao == 4)
-            {
-                Console.WriteLine("Voce escolheu transferencia! ");
-                saldoatual = OperacaoNegativa(saldoatual);
-            }
-
-            else if (operacao == 5)
-
-                Console.WriteLine("Ate mais.");
-
-            else
-
-                Console.WriteLine("Digite um nome valido: ");
-
-            Console.WriteLine($"Seu atual da conta: {saldoatual}");
-
-        } while (operacao != 5);
+        else
+        {
+            return 0;
+        }
 
 
 
     }
-
-    static int Opcoes()
-    {
-        int operacao;
-
-        Console.WriteLine("Digite a operacao: 1) Saque \n 2) Depósito \n 3) Pagamento de Conta \n 4) Transferência \n 5) Sair ");
-        operacao = int.Parse(Console.ReadLine());
-
-        return operacao;
-    }
-
-    static float PerguntaSaldo()
-    {
-        float saldoatual;
-
-        Console.WriteLine("Digite o saldo atual da conta:");
-        saldoatual = float.Parse(Console.ReadLine());
-
-        return saldoatual;
-    }
-
-    static float OperacaoNegativa(float saldoatual)
-    {
-        float valoroperacao;
-
-        Console.WriteLine("Digite o valor da operacao:");
-        valoroperacao = float.Parse(Console.ReadLine());
-
-        saldoatual -= valoroperacao;
-
-        return saldoatual;
-    }
-
-    static float OperacaoPositiva(float saldoatual)
-    {
-        float valoroperacao;
-
-        Console.WriteLine("Digite o valor da operacao:");
-        valoroperacao = float.Parse(Console.ReadLine());
-
-        saldoatual += valoroperacao;
-
-        return saldoatual;
-
-    }
-
-
 }
 
 

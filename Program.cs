@@ -5,37 +5,45 @@ class Program
 {
     static void Main()
     {
-        int a, b, c;
+        int n1, n2, n3;
 
-        Console.WriteLine("Digite a");
-        a = int.Parse(Console.ReadLine());
+        do
+        {
+            Console.WriteLine("Digite n1");
+            n1 = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Digite b");
-        b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite n2");
+            n2 = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Digite c");
-        c = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite n3");
+            n3 = int.Parse(Console.ReadLine());
 
-        Console.WriteLine(mostraResultados(a, b, c));
+
+        } while (validaValores(n1, n2, n3) == false);
+
+        mostraResultados(n1, n2, n3);
+
 
     }
 
-    static float mostraResultados(int x, int y, int z)
+    static void mostraResultados(int x, int y, int z)
     {
         int soma;
         float media = 0;
 
         soma = x + y + z;
-
+        Console.WriteLine("soma" + soma);
         media = (float)soma / 3;
-        return media;
 
+        Console.WriteLine("media" + media);
     }
 
+    static bool validaValores(int x, int y, int z)
+    {
+        return (x + y + z) % x == 0;
 
-
+    }
 }
-
 
 
 

@@ -5,58 +5,25 @@ class Program
 {
     static void Main()
     {
-        int n;
+        int a, b, c;
 
-        Console.WriteLine("Digite quantas pessoas serao: ");
-        n = int.Parse(Console.ReadLine());
+        Console.WriteLine("Digite a");
+        a = int.Parse(Console.ReadLine());
 
-        mostraResultados(n);
+        Console.WriteLine("Digite b");
+        b = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Digite c");
+        c = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(validaValores(a, b, c));
 
     }
 
-    static int TipoPessoa(int idade)
+    static bool validaValores(int x, int y, int z)
     {
-        if (idade < 18)
-            return 1;
-
-        else
-            return 2;
+        return (x + y + z) % x == 0;
     }
-
-    static void mostraResultados(int n)
-    {
-        float media;
-        int somaMenor = 0, SomaMaior = 0, idades, somageral = 0;
-
-
-
-        for (int i = 1; i <= n; i++)
-        {
-            Console.WriteLine($"Digite a idade da {i} pessoa:");
-            idades = int.Parse(Console.ReadLine());
-
-            somageral += idades;
-
-            if (TipoPessoa(idades) == 1)
-
-            {
-                somaMenor++;
-            }
-
-            else
-                SomaMaior++;
-        }
-        media = (float)somageral / n;
-
-
-        Console.WriteLine("Media geral " +  media);
-        Console.WriteLine("Total menores " +  somaMenor);
-        Console.WriteLine("Total maiores " +  SomaMaior);
-
-
-
-    }
-
 
 
 

@@ -11,33 +11,38 @@ class Program
 
         MostraN(n);
 
-    }
 
 
-    static int [] CalculaPosicao(int n)
-    {
-        int[] V = new int[n];
 
-        for (int i = 0; i < V.Length; i++)
-        {
-            V[i] = (i + 1) * 2;
-        }
-        return V;
     }
 
     static void MostraN(int n)
     {
-
-        int [] V = CalculaPosicao(n);
+        Console.Write($"Os {n} primeiros numeros impares: ");
+        int[] V = Impar(n);
 
         for (int i = 0; i < V.Length; i++)
         {
-
             Console.WriteLine(V[i]);
         }
 
+    }
+
+    static int[] Impar(int n)
+    {
+        int i;
+        int[] V = new int[n];
+
+        for (i = 1; i <= n; i++)
+        {
+            V[i - 1] = (i * 2) - 1;
+        }
+
+        return V;
 
     }
+
+
 
 }
 

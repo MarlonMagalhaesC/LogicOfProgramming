@@ -5,46 +5,23 @@ class Program
 {
     static void Main()
     {
-        Pergunta();
+       int idade;
+
+       Console.WriteLine("Digite sua idade: ");
+       idade = int.Parse(Console.ReadLine());
+
+       Console.WriteLine(TipoPessoa(idade));
     }
 
-    static int ContaMultiplos(int x, int y, int z)
+    static int TipoPessoa(int idade)
     {
+     if (idade < 18)
+     return 1;
 
-        int i, cont = 0;
-
-        for (i = x; i <= y; i++)
-        {
-            if (z % i == 0)
-                cont++;
-        }
-
-        return cont;
+     else
+     return 2;
     }
 
-    static void Pergunta()
-
-    {
-        int a, b, c;
-
-        Console.WriteLine("Digite a: ");
-        a = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Digite b: ");
-        b = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Digite c: ");
-        c = int.Parse(Console.ReadLine());
-
-        if (a < b)
-            Console.WriteLine(ContaMultiplos(a, b, c));
-
-        else 
-        Console.WriteLine("Os valores de a e b não permitem realizar a tarefa.");
-
-
-
-    }
 
 
 
